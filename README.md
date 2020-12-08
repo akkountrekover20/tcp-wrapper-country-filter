@@ -44,17 +44,18 @@ This is a simple TCP wrapper which will allow you filter connections to your ser
 This was developed due to a need to be able to block countries from being able to attack my servers, some of the countries have in excess of 8000+ ip blocks so adding them all to IPTables wasn't a very scalable solution. I wanted something where I could specify a country and the rest would be automatic.
 
 Although this was developed to be used for ssh connections, the same principle and configuration can be applied to any service that is supported by tcp wrappers. For example:
-
-* ftpd
-* imapd
-* popd
-* sendmail
-* sshd
-* ALL
+```
+ftpd:
+imapd:
+popd:
+sendmail:
+sshd:
+ALL:
+```
 
 ### Prerequisites
 
-This script relies on `geoiplookup`.
+This script relies on `geoiplookup`, if it is not installed then the script will log and error and `accept` the connection.
 
 #### Installing the Prerequisites
 
@@ -100,7 +101,7 @@ By default the script will deny connections from any country listed in the [`COU
 
 #### /etc/hosts.allow
 ```shell
-sshd: ALL: aclexec /usr/sbin/sshd-filter %a 
+sshd: ALL: aclexec /usr/sbin/ip-filter %a 
 ```
 
 #### /etc/hosts.deny
@@ -109,12 +110,15 @@ sshd: ALL
 ````
 > Allow acceptance/rejection should be handle in /etc/hosts.allow so the entry in hosts.deny is purely a catchall safety net.
 
-
 ## Testing
 
 This script has been tested with a large number of IP addresses to ensure that it works as expected, it has also been tested of multiple OS flavours and versions, as long as the prerequisites are met then it should function as desired.
 
 It is also being actively used on all of my servers and rejecting hundreds of connections daily.
+
+## Alternatives to blocking whole country
+
+If you do not want to block the entire country just because of a few dodgy people then how about [filtering connections based on AS Number?](https://github.com/SecOpsToolkit/tcp-wrappers-asn-filter).
 
 ## Tech Stack
 
