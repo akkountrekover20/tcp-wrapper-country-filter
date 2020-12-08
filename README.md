@@ -3,7 +3,7 @@
                 <img src="https://github.com/TGWolf/branding/blob/master/images/general/logos/128/without-name/white.png?raw=true" alt="TGwolf" />
         </a>
         <br>
-        A short description
+        TCP wrapper to filter by country
 </h1>
 
 
@@ -40,6 +40,17 @@
 This is a simple TCP wrapper which will allow you filter connections to your server based on the country of origin. It can be configured in 2 different ways:
 1. To only allow connections from a specified list of countries.
 2. To allow all connection EXCEPT those from a specified list of countries.
+
+This was developed due to a need to be able to block countries from being able to attack my servers, some of the countries have in excess of 8000+ ip blocks so adding them all to IPTables wasn't a very scalable solution. I wanted something where I could specify a country and the rest would be automatic.
+
+Although this was developed to be used for ssh connections, the same principle and configuration can be applied to any service that is supported by tcp wrappers. For example:
+
+* ftpd
+* imapd
+* popd
+* sendmail
+* sshd
+* ALL
 
 ### Prerequisites
 
@@ -83,6 +94,12 @@ sshd: ALL: aclexec /usr/sbin/sshd-filter %a
 sshd: ALL
 ````
 > Allow acceptance/rejection should be handle in /etc/hosts.allow so the entry in hosts.deny is purely a catchall safety net.
+
+## Testing
+
+This script has been tested with a large number of IP addresses to ensure that it works as expected, it has also been tested of multiple OS flavours and versions, as long as the prerequisites are met then it should function as desired.
+
+It is also being actively used on all of my servers and rejecting hundreds of connections daily.
 
 ## Tech Stack
 
