@@ -45,8 +45,17 @@ This is a simple TCP wrapper which will allow you filter connections to your ser
 
 This script relies on `geoiplookup`.
 
-1. Debian/Ubuntu = apt-get install geoip-bin geoip-database
-2. CentOS/RHEL = um install GeoIP GeoIP-data
+#### Installing the Prerequisites
+
+<b>Debian/Ubuntu</b>
+```shell
+# apt-get install geoip-bin geoip-database
+```
+
+<b>CentOS/RHEL</b>
+```shell
+# yum install GeoIP GeoIP-data
+```
 
 By default these install the free version of the GeoLite Country binary database (GeoIP.dat) usually in the /usr/local/share or /usr/share directory. You can either copy in a custom version of the database or edit your GeoIP.conf file to enter in your license information if you have a paid subscription.
 
