@@ -86,7 +86,7 @@ Although this was developed for use with shhd, the principle should work for any
 
 #### Install the filter
 
-Simply copy the [script]('src/ip-filter.sh') to /usr/sbin/ip-filter (and ensure that it is executable).
+Simply copy the [script](src/ip-filter.sh) to /usr/sbin/ip-filter (and ensure that it is executable).
 
 #### /etc/hosts.allow
 ```shell
