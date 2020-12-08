@@ -80,9 +80,13 @@ GeoIP Country Edition: US, United States
 ```
 > If you see the above or similiar then geoiplookup is installed and working on your server.
 
-### Configuration for the wrappers
+### Configuration
 
 Although this was developed for use with shhd, the principle should work for any service that is supported by TCP wrappers, however in this example we will stick to sshd.
+
+#### Install the filter
+
+Simply copy the [script]('src/ip-filter.sh') to /usr/sbin/ip-filter (and ensure that it is executable).
 
 #### /etc/hosts.allow
 ```shell
