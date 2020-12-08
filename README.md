@@ -88,6 +88,10 @@ Although this was developed for use with shhd, the principle should work for any
 
 Simply copy the [script](src/ip-filter.sh) to /usr/sbin/ip-filter (and ensure that it is executable).
 
+Out of the box the country list is empty and the script has the default action of DENY (only block countries in the list), so the net effect at this point is to block nothing.
+
+To add countries to the list simple add them to the [`COUNTRIES`](src/ip-filter.sh#L23) variable, this is a space seperated list of country codes.
+
 #### /etc/hosts.allow
 ```shell
 sshd: ALL: aclexec /usr/sbin/sshd-filter %a 
@@ -98,6 +102,7 @@ sshd: ALL: aclexec /usr/sbin/sshd-filter %a
 sshd: ALL
 ````
 > Allow acceptance/rejection should be handle in /etc/hosts.allow so the entry in hosts.deny is purely a catchall safety net.
+
 
 ## Testing
 

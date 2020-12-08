@@ -20,10 +20,10 @@
 # ---------------------------------------------------------------------------------------- #
 
 # space-separated list of country codes
-COUNTRIES="CN RU"
+COUNTRIES=''
 
 # Allow or Deny countries listed
-ACTION='ALLOW'
+ACTION='DENY'
 
 # Locate the paths for the commnands (if installed)
 GEOIPLOOKUP=$(command -v geoiplookup)
