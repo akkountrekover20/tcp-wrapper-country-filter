@@ -90,7 +90,13 @@ Simply copy the [script](src/ip-filter.sh) to /usr/sbin/ip-filter (and ensure th
 
 Out of the box the country list is empty and the script has the default action of DENY (only block countries in the list), so the net effect at this point is to block nothing.
 
+##### Adding countries
+
 To add countries to the list simple add them to the [`COUNTRIES`](src/ip-filter.sh#L23) variable, this is a space seperated list of country codes.
+
+##### Allow or Deny
+
+By default the script will deny connections from any country listed in the [`COUNTRIES`](src/ip-filter.sh#L23) variable, however you can invert this logic and only allow connections from these countries, by setting the [`ACTION`](src/ip-filter.sh#L26) variable to `ALLOW`.
 
 #### /etc/hosts.allow
 ```shell
