@@ -95,6 +95,8 @@ Out of the box the country list is empty and the script has the default action o
 
 To add countries to the list simple add them to the [`COUNTRIES`](src/country-filter.sh#L23) variable, this is a space seperated list of country codes (2 letter codes). 
 
+If you want to block all entries where a country cannot be found simple add `--` to the [`COUNTRIES`](src/country-filter.sh#L23) variable.
+
 ##### Allow or Deny
 
 By default the script will deny connections from any country listed in the [`COUNTRIES`](src/country-filter.sh#L23) variable, however you can invert this logic and only allow connections from these countries, by setting the [`ACTION`](src/country-filter.sh#L26) variable to `ALLOW`.
