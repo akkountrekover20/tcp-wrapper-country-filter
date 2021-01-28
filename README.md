@@ -93,7 +93,7 @@ Out of the box the country list is empty and the script has the default action o
 
 ##### Adding countries
 
-To add countries to the list simple add them to the [`COUNTRIES`](src/country-filter.sh#L23) variable, this is a space seperated list of country codes.
+To add countries to the list simple add them to the [`COUNTRIES`](src/country-filter.sh#L23) variable, this is a space seperated list of country codes (2 letter codes). 
 
 ##### Allow or Deny
 
@@ -131,5 +131,13 @@ If you do not want to block the entire country just because of a few dodgy peopl
 <p>
         <a href="https://github.com/TGWolf">
                 <img src="https://img.shields.io/badge/Wolf-black?style=for-the-badge&logo=baidu&logoColor=white" />
+        </a>
+</p>
+
+## Show Support
+
+<p>
+        <a href="https://ko-fi.com/wolfsoftware">
+                <img src="https://img.shields.io/badge/Ko%20Fi-blue?style=for-the-badge&logo=ko-fi&logoColor=white" />
         </a>
 </p>
