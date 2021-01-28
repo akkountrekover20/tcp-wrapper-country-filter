@@ -1,6 +1,6 @@
 <h1 align="center">
-        <a href="https://github.com/TGWolf">
-                <img src="https://github.com/TGWolf/branding/blob/master/images/general/logos/128/without-name/white.png?raw=true" alt="TGwolf" />
+        <a href="https://github.com/WolfSoftware">
+                <img src="https://github.com/WolfSoftware/branding/blob/master/images/general/banners/64/black-and-white.png?raw=true" alt="Wolf Software Logo" />
         </a>
         <br>
         TCP wrapper to filter by country
@@ -8,30 +8,30 @@
 
 
 <p align="center">
-        <a href="https://github.com/SecOpsToolkit/tcp-wrappers-country-filter">
-                <img src="https://img.shields.io/travis/com/SecOpsToolkit/tcp-wrappers-country-filter/master?style=for-the-badge&logo=travis" alt="Build Status">
+        <a href="https://travis-ci.com/SecOpsToolbox/tcp-wrappers-country-filter">
+                <img src="https://img.shields.io/travis/com/SecOpsToolbox/tcp-wrappers-country-filter/master?style=for-the-badge&logo=travis" alt="Build Status">
         </a>
-        <a href="https://github.com/SecOpsToolkit/tcp-wrappers-country-filter/releases/latest">
-                <img src="https://img.shields.io/github/release/SecOpsToolkit/tcp-wrappers-country-filter?color=black&style=for-the-badge&logo=github&logoColor=white&label=Latest%20Release" alt="Release">
+        <a href="https://github.com/SecOpsToolbox/tcp-wrappers-country-filter/releases/latest">
+                <img src="https://img.shields.io/github/release/SecOpsToolbox/tcp-wrappers-country-filter?color=blue&style=for-the-badge&logo=github&logoColor=white&label=Latest%20Release" alt="Release">
         </a>
         <a href="LICENSE.md">
-                <img src="https://img.shields.io/badge/license-MIT-black?style=for-the-badge&logo=read-the-docs&logoColor=white" alt="Software License">
+                <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" alt="Software License">
         </a>
         <a href="https://www.gnu.org/software/bash/">
-                <img src="https://img.shields.io/badge/Developed%20in-bash-black?logo=gnu-bash&logoColor=white&style=for-the-badge" />
+                <img src="https://img.shields.io/badge/Developed%20in-bash-blue?logo=gnu-bash&logoColor=white&style=for-the-badge" />
         </a>
 	<br>
         <a href=".github/CODE_OF_CONDUCT.md">
-                <img src="https://img.shields.io/badge/Code%20of%20Conduct-black?style=for-the-badge&logo=read-the-docs&logoColor=white" />
+                <img src="https://img.shields.io/badge/Code%20of%20Conduct-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" />
         </a>
         <a href=".github/CONTRIBUTING.md">
-                <img src="https://img.shields.io/badge/Contributing-black?style=for-the-badge&logo=read-the-docs&logoColor=white" />
+                <img src="https://img.shields.io/badge/Contributing-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" />
         </a>
         <a href=".github/SECURITY.md">
-                <img src="https://img.shields.io/badge/Report%20Security%20Concern-black?style=for-the-badge&logo=read-the-docs&logoColor=white" />
+                <img src="https://img.shields.io/badge/Report%20Security%20Concern-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" />
         </a>
         <a href=".github/SUPPORT.md">
-                <img src="https://img.shields.io/badge/Get%20Support-black?style=for-the-badge&logo=read-the-docs&logoColor=white" />
+                <img src="https://img.shields.io/badge/Get%20Support-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" />
         </a>
 </p>
 
@@ -120,10 +120,11 @@ It is also being actively used on all of my servers and rejecting hundreds of co
 
 If you do not want to block the entire country just because of a few dodgy people then how about [filtering connections based on AS Number?](https://github.com/SecOpsToolkit/tcp-wrappers-asn-filter).
 
+
 ## Tech Stack
 
-[![Bash](https://img.shields.io/badge/bash-black?logo=gnu-bash&logoColor=white&style=for-the-badge)](https://www.gnu.org/software/bash/)
-[![Travis CI](https://img.shields.io/badge/travis-black?logo=travis&logoColor=white&style=for-the-badge)](https://travis-ci.com/)
+[![Bash](https://img.shields.io/badge/bash-blue?logo=gnu-bash&logoColor=white&style=for-the-badge)](https://www.gnu.org/software/bash/)
+
 
 ## Contributors
 

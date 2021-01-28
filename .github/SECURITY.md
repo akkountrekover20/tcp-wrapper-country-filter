@@ -10,11 +10,9 @@ This document outlines security procedures and general policies for this project
 
 We take **ALL** security related bugs and issues very seriously.
 
-If you think you have identified a security related issue, please report it immediately
-to the [Wolfsoftware Security Team](discosure@wolfsoftware.com) and include the word 
-"SECURITY" in the subject line. If you are not sure, don’t worry. Better safe than sorry 
-– just send an email.
-
+If you think you have identified a security related issue, please [report it immediately](mailto:disclose@wolfsoftware.com) 
+and include the word "SECURITY" in the subject line. If you are not sure, don’t worry.
+Better safe than sorry – just send an email.
 
 * Please provide as much information as you can.
 * Please do not open issues related to any security concerns publicly.
@@ -23,19 +21,16 @@ to the [Wolfsoftware Security Team](discosure@wolfsoftware.com) and include the 
 Report security bugs in third-party modules to the person or team maintaining
 the module.
 
-
 ## Disclosure Policy
 
-When the security team receives a security bug report, they will assign it to a
-primary handler. This person will coordinate the fix and release process,
-involving the following steps:
+When a security report is received, we will carry out the following steps:
 
   * Confirm the problem and determine the affected versions.
   * Audit code to find any potential similar problems.
   * Prepare fixes for all releases still under maintenance. These fixes will be
-    released as fast as possible to npm.
+    released as fast as possible.
 
-The primary handler will endeavor to keep you informed of the progress towards a fix 
+We will endeavor to keep you informed of the progress towards a fix 
 and full announcement, and may ask for additional information or guidance.
 
 ## Comments on this Policy
