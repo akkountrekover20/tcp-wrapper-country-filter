@@ -7,7 +7,9 @@ This changelog was automatically generated using [Caretaker](https://github.com/
 
 ### [Unreleased](https://github.com/secopstoolbox/tcp-wrappers-country-filter/commits/master)
 
-- Update [`[head]`](https://github.com/secopstoolbox/tcp-wrappers-country-filter/commit/)
+- Update readme [`[head]`](https://github.com/secopstoolbox/tcp-wrappers-country-filter/commit/)
+
+- Update [`[a43f3de]`](https://github.com/secopstoolbox/tcp-wrappers-country-filter/commit/a43f3dec4d2d97f492ef8da314daf349918606dd)
 
 - Move to wolf software [`[6957cfa]`](https://github.com/secopstoolbox/tcp-wrappers-country-filter/commit/6957cfa6891a7f0862d8202caed5ed39ad8e09f6)
 
