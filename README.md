@@ -41,9 +41,9 @@ This is a simple TCP wrapper which will allow you filter connections to your ser
 1. To only allow connections from a specified list of countries.
 2. To allow all connection EXCEPT those from a specified list of countries.
 
-This was developed due to a need to be able to block countries from being able to attack my servers, some of the countries have in excess of 8000+ ip blocks so adding them all to IPTables wasn't a very scalable solution. I wanted something where I could specify a country and the rest would be automatic.
+This was developed due to a need to be able to block countries from being able to attack our servers. The issue is that some of the countries have in excess of 8000+ ip blocks so adding them all to IPTables wasn't a very scalable solution. We wanted something where we could specify a country and the rest would be automatic.
 
-Although this was developed to be used for ssh connections, the same principle and configuration can be applied to any service that is supported by tcp wrappers. For example:
+Although this was developed to be used for ssh (sshd) connections, the same principle and configuration can be applied to any service that is supported by tcp wrappers. For example:
 ```
 ftpd:
 imapd:
@@ -55,7 +55,7 @@ ALL:
 
 ### Prerequisites
 
-This script relies on `geoiplookup`, if it is not installed then the script will log and error and `accept` the connection.
+This script relies on `geoiplookup`, if it is not installed then the script will log an error and `accept` the connection, even if the default [`ACTION`](src/country-filter.sh#L26) is `DENY`. Without this ALL connections would be blocked including your own (which would be bad)
 
 #### Installing the Prerequisites
 
@@ -87,7 +87,7 @@ Although this was developed for use with shhd, the principle should work for any
 
 #### Install the filter
 
-Simply copy the [script](src/country-filter.sh) to /usr/sbin/country-filter.sh (and ensure that it is executable).
+Simply copy the [script](src/country-filter.sh) to /usr/sbin/country-filter (and ensure that it is executable [chmod +x]).
 
 Out of the box the country list is empty and the script has the default action of DENY (only block countries in the list), so the net effect at this point is to block nothing.
 
