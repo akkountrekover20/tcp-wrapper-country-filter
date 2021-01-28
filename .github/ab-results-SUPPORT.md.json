@@ -1,0 +1,58 @@
+{
+  "date": "2021-01-28 15:22:10 +0000",
+  "links": [
+    "https://github.com/SecOpsToolbox/tcp-wrappers-country-filter/issues"
+  ],
+  "issues": [
+    {
+      "url": "https://github.com/SecOpsToolbox/tcp-wrappers-country-filter/issues",
+      "status": 404,
+      "error": null,
+      "headers": {
+        "date": "Thu, 28 Jan 2021 15:22:10 GMT",
+        "content-type": "text/plain; charset=utf-8",
+        "server": "GitHub.com",
+        "status": "404 Not Found",
+        "vary": "X-PJAX, Accept-Encoding, Accept, X-Requested-With",
+        "cache-control": "no-cache",
+        "strict-transport-security": "max-age=31536000; includeSubdomains; preload",
+        "x-frame-options": "deny",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "expect-ct": "max-age=2592000, report-uri=\"https://api.github.com/_private/browser/errors\"",
+        "content-security-policy": "default-src 'none'; base-uri 'self'; connect-src 'self'; form-action 'self'; img-src 'self' data:; script-src 'self'; style-src 'unsafe-inline'",
+        "set-cookie": "_gh_sess=3r926B6jQW2S1j3R%2BWzKwdfURDttyNJLrfnj6BySs8nOdKFmEbR73ZH65UVvkbbCPjfIZSiHPA6zjo3IYMLJmQa8DfJalApa2qupMgdqcGM7VgmwX%2BKzN0hpwT2elI08wWzhPlkLa%2FFe9XXRhCX6g8zZt1jFgOvYkkAUOUMf8y%2FlUF8B6O7LXmleLV6F%2BPtoxNp9HP%2FPZG1F7M%2BiuwvvbrRQ8JynDB%2BCdx3QQBRrEazHRL9MUFG3OmIC%2BncwA33laHBvzmy%2FjH4kDMhlRlW6CA%3D%3D--oCDwAh7Rh%2BjqhCCd--zqg6c1JNoDlr3VOKwvGH%2FQ%3D%3D; Path=/; HttpOnly; Secure; SameSite=Lax, _octo=GH1.1.1596464895.1611847330; Path=/; Domain=github.com; Expires=Fri, 28 Jan 2022 15:22:10 GMT; Secure; SameSite=Lax, logged_in=no; Path=/; Domain=github.com; Expires=Fri, 28 Jan 2022 15:22:10 GMT; HttpOnly; Secure; SameSite=Lax",
+        "content-length": "40",
+        "x-github-request-id": "F0B1:13EC3:1D0BFF3:23AB51C:6012D6A2"
+      },
+      "loc": 3
+    }
+  ],
+  "all": [
+    {
+      "url": "https://github.com/SecOpsToolbox/tcp-wrappers-country-filter/issues",
+      "status": 404,
+      "error": null,
+      "headers": {
+        "date": "Thu, 28 Jan 2021 15:22:10 GMT",
+        "content-type": "text/plain; charset=utf-8",
+        "server": "GitHub.com",
+        "status": "404 Not Found",
+        "vary": "X-PJAX, Accept-Encoding, Accept, X-Requested-With",
+        "cache-control": "no-cache",
+        "strict-transport-security": "max-age=31536000; includeSubdomains; preload",
+        "x-frame-options": "deny",
+        "x-content-type-options": "nosniff",
+        "x-xss-protection": "1; mode=block",
+        "referrer-policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "expect-ct": "max-age=2592000, report-uri=\"https://api.github.com/_private/browser/errors\"",
+        "content-security-policy": "default-src 'none'; base-uri 'self'; connect-src 'self'; form-action 'self'; img-src 'self' data:; script-src 'self'; style-src 'unsafe-inline'",
+        "set-cookie": "_gh_sess=3r926B6jQW2S1j3R%2BWzKwdfURDttyNJLrfnj6BySs8nOdKFmEbR73ZH65UVvkbbCPjfIZSiHPA6zjo3IYMLJmQa8DfJalApa2qupMgdqcGM7VgmwX%2BKzN0hpwT2elI08wWzhPlkLa%2FFe9XXRhCX6g8zZt1jFgOvYkkAUOUMf8y%2FlUF8B6O7LXmleLV6F%2BPtoxNp9HP%2FPZG1F7M%2BiuwvvbrRQ8JynDB%2BCdx3QQBRrEazHRL9MUFG3OmIC%2BncwA33laHBvzmy%2FjH4kDMhlRlW6CA%3D%3D--oCDwAh7Rh%2BjqhCCd--zqg6c1JNoDlr3VOKwvGH%2FQ%3D%3D; Path=/; HttpOnly; Secure; SameSite=Lax, _octo=GH1.1.1596464895.1611847330; Path=/; Domain=github.com; Expires=Fri, 28 Jan 2022 15:22:10 GMT; Secure; SameSite=Lax, logged_in=no; Path=/; Domain=github.com; Expires=Fri, 28 Jan 2022 15:22:10 GMT; HttpOnly; Secure; SameSite=Lax",
+        "content-length": "40",
+        "x-github-request-id": "F0B1:13EC3:1D0BFF3:23AB51C:6012D6A2"
+      },
+      "loc": 3
+    }
+  ]
+}

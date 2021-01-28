@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # ---------------------------------------------------------------------------------------- #
 # Description                                                                              #
 # ---------------------------------------------------------------------------------------- #
@@ -13,7 +14,7 @@
 # TCP Wrapper config:                                                                      #
 #                                                                                          #
 # /etc/hosts.allow                                                                         #
-#      sshd: ALL: aclexec /usr/sbin/ip-filter %a                                           #
+#      sshd: ALL: aclexec /usr/sbin/county-filter %a                                       #
 #                                                                                          #
 # /etc/hosts.deny                                                                          #
 #      sshd: ALL                                                                           #
@@ -24,10 +25,6 @@ COUNTRIES=''
 
 # Allow or Deny countries listed
 ACTION='DENY'
-
-# Locate the paths for the commnands (if installed)
-GEOIPLOOKUP=$(command -v geoiplookup)
-GEOIPLOOKUP6=$(command -v geoiplookup6)
 
 # ---------------------------------------------------------------------------------------- #
 # In terminal                                                                              #
@@ -57,11 +54,41 @@ function debug()
 }
 
 # ---------------------------------------------------------------------------------------- #
-# Main()                                                                                   #
+# Check results                                                                            #
 # ---------------------------------------------------------------------------------------- #
-# The main function where all of the heavy lifting and script config is done.              #
+# A wrapper to check individual results against a given array and deny as required.        #
 # ---------------------------------------------------------------------------------------- #
-function main()
+function check_results()
+{
+    local item=$1
+    local list=$2
+
+    #
+    # Check the current item and list and decide what action to take
+    #
+    if [[ "${ACTION}" == 'DENY' ]]; then
+        [[ $list =~ $item ]] && RESPONSE="DENY" || RESPONSE="ALLOW"
+    else
+        [[ $list =~ $item ]] && RESPONSE="ALLOW" || RESPONSE="DENY"
+    fi
+
+    if [[ $RESPONSE = "DENY" ]]; then
+        debug "$RESPONSE sshd connection from ${IP} ($item)"
+        exit 1
+    fi
+
+    #
+    # Default (REPONSE=ALLOW) is to do nothing
+    #
+}
+
+# ---------------------------------------------------------------------------------------- #
+# Handle country blocks                                                                    #
+# ---------------------------------------------------------------------------------------- #
+# Lookup the country for a given IP, it should only have, at most, one entry, capture the  #
+# country code and test each it to ensure it is not bocked.                                #
+# ---------------------------------------------------------------------------------------- #
+function handle_country_blocks
 {
     #
     # Local variables
@@ -71,6 +98,39 @@ function main()
     local v6_regex='^([0-9a-fA-F]{0,4}:){1,7}[0-9a-fA-F]{0,4}$'
 
     #
+    # Workout if the IP is a V6 address or not
+    #
+    if [[ ${IP} =~ $v6_regex ]]; then
+        GEOLOOKUP=$(command -v geoiplookup6)
+        VERSION=6
+    else
+        GEOLOOKUP=$(command -v geoiplookup)
+    fi
+
+    #
+    # Do the lookup and let check_results handle the blocking
+    #
+    if [[ -z "${GEOLOOKUP}" ]]; then
+        debug "geoiplookup${VERSION} is not installed - Skipping"
+    else
+        COUNTRY=$("${GEOLOOKUP}" "${IP}" | awk -F ": " '{ print $2 }' | awk -F "," '{ print $1 }' | head -n 1)
+
+        if [[ "${COUNTRY}" == 'IP Address not found' ]]; then
+            COUNTRY='--'
+        fi
+
+        check_results "${COUNTRY}" "${COUNTRIES}"
+    fi
+}
+
+# ---------------------------------------------------------------------------------------- #
+# Main()                                                                                   #
+# ---------------------------------------------------------------------------------------- #
+# The main function where all of the heavy lifting and script config is done.              #
+# ---------------------------------------------------------------------------------------- #
+function main()
+{
+    #
     # NO IP given - error and abort
     #
     if [[ $# -ne 1 ]]; then
@@ -79,27 +139,9 @@ function main()
     fi
 
     #
-    # Workout if the IP is a V6 address or not
+    # Set a variable (Could pass it at function call)
     #
-    if [[ ${1} =~ $v6_regex ]]; then
-        GEOLOOKUP="${GEOIPLOOKUP6}"
-        VERSION=6
-    else
-        GEOLOOKUP="${GEOIPLOOKUP}"
-    fi
-
-    #
-    # geoiplookup isn't installed - error and abort
-    #
-    if [[ -z "${GEOLOOKUP}" ]]; then
-        debug "geoiplookup${VERSION} is not installed - Aborting"
-        exit 0
-    fi
-
-    #
-    # Lookup the country for the IP (IP Address not found is a valid response)
-    #
-    COUNTRY=$("${GEOLOOKUP}" "${1}" | awk -F ": " '{ print $2 }' | awk -F "," '{ print $1 }' | head -n 1)
+    declare -g IP="${1}"
 
     #
     # Turn off case sensitivity
@@ -107,23 +149,9 @@ function main()
     shopt -s nocasematch
 
     #
-    # Actions:
-    #     deny: deny anyone coming from a country that is in the list and allow everyone else
-    #     allow: allow anyone coming from a country that is in the list and deny everyone else
+    # Country level blocking
     #
-    if [[ "${ACTION}" == 'DENY' ]]; then
-        [[ $COUNTRIES =~ $COUNTRY ]] && RESPONSE="DENY" || RESPONSE="ALLOW"
-    else
-        [[ $COUNTRIES =~ $COUNTRY ]] && RESPONSE="ALLOW" || RESPONSE="DENY"
-    fi
-
-    #
-    # Reject connection
-    #
-    if [[ $RESPONSE = "DENY" ]]; then
-        debug "$RESPONSE sshd connection from $1 ($COUNTRY)"
-        exit 1
-    fi
+    handle_country_blocks
 
     # Default allow
     exit 0
