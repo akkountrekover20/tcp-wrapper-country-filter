@@ -8,11 +8,11 @@
 
 
 <p align="center">
-        <a href="https://travis-ci.com/SecOpsToolbox/tcp-wrappers-country-filter">
-                <img src="https://img.shields.io/travis/com/SecOpsToolbox/tcp-wrappers-country-filter/master?style=for-the-badge&logo=travis" alt="Build Status">
+        <a href="https://travis-ci.com/SecOpsToolbox/tcp-wrapper-country-filter">
+                <img src="https://img.shields.io/travis/com/SecOpsToolbox/tcp-wrapper-country-filter/master?style=for-the-badge&logo=travis" alt="Build Status">
         </a>
-        <a href="https://github.com/SecOpsToolbox/tcp-wrappers-country-filter/releases/latest">
-                <img src="https://img.shields.io/github/release/SecOpsToolbox/tcp-wrappers-country-filter?color=blue&style=for-the-badge&logo=github&logoColor=white&label=Latest%20Release" alt="Release">
+        <a href="https://github.com/SecOpsToolbox/tcp-wrapper-country-filter/releases/latest">
+                <img src="https://img.shields.io/github/release/SecOpsToolbox/tcp-wrapper-country-filter?color=blue&style=for-the-badge&logo=github&logoColor=white&label=Latest%20Release" alt="Release">
         </a>
         <a href="LICENSE.md">
                 <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" alt="Software License">
@@ -120,7 +120,7 @@ It is also being actively used on all of my servers and rejecting hundreds of co
 
 ## Alternatives to blocking whole country
 
-If you do not want to block the entire country just because of a few dodgy people then how about [filtering connections based on AS Number?](https://github.com/SecOpsToolkit/tcp-wrappers-asn-filter).
+If you do not want to block the entire country just because of a few dodgy people then how about [filtering connections based on AS Number?](https://github.com/SecOpsToolkit/tcp-wrapper-asn-filter).
 
 
 ## Tech Stack
